@@ -14,7 +14,7 @@ const projects: Project[] = [
     company: "Ganifield Mill",
     description:
       "Animal Feed Production — Electrical System Design, Supply & Installation",
-    gradient: "from-[#0D1B2A] to-[#1b3a5c]",
+    gradient: "from-[#343993] to-[#1b3a5c]",
     icon: (
       <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
@@ -34,7 +34,7 @@ const projects: Project[] = [
   {
     company: "WASA",
     description: "Electrical Infrastructure & Panel Installation",
-    gradient: "from-[#0D1B2A] to-[#234567]",
+    gradient: "from-[#343993] to-[#234567]",
     icon: (
       <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1a2.25 2.25 0 010-3.18l.71-.71a2.25 2.25 0 013.18 0l1.79 1.79 1.79-1.79a2.25 2.25 0 013.18 0l.71.71a2.25 2.25 0 010 3.18l-5.1 5.1a1.125 1.125 0 01-1.59 0z" />
@@ -45,7 +45,7 @@ const projects: Project[] = [
   {
     company: "Coca Cola",
     description: "Supply & Installation of LT Panels & Cabling",
-    gradient: "from-[#2d5a8e] to-[#0D1B2A]",
+    gradient: "from-[#2d5a8e] to-[#343993]",
     icon: (
       <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -70,12 +70,12 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-[#F57C00] font-semibold tracking-widest text-sm uppercase mb-3">
+          <span className="inline-block text-[#e4252e] font-semibold tracking-widest text-sm uppercase mb-3">
             OUR PREVIOUS PROJECTS
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#343993] mb-4">
             Projects We&apos;re{" "}
-            <span className="text-[#F57C00]">Proud Of</span>
+            <span className="text-[#e4252e]">Proud Of</span>
           </h2>
           <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
             Delivering excellence in every project we undertake.
@@ -111,7 +111,7 @@ export default function Projects() {
 
               {/* Card Content */}
               <div className="p-6">
-                <h3 className="text-lg font-bold text-[#0D1B2A] mb-2 group-hover:text-[#F57C00] transition-colors duration-300">
+                <h3 className="text-lg font-bold text-[#343993] mb-2 group-hover:text-[#e4252e] transition-colors duration-300">
                   {project.company}
                 </h3>
                 <p className="text-[#6b7280] text-sm leading-relaxed">
@@ -126,7 +126,7 @@ export default function Projects() {
         <div className="text-center">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 border-2 border-[#F57C00] text-[#F57C00] font-semibold px-8 py-3 rounded-full hover:bg-[#F57C00] hover:text-white transition-colors duration-300"
+            className="inline-flex items-center gap-2 border-2 border-[#e4252e] text-[#e4252e] font-semibold px-8 py-3 rounded-full hover:bg-[#e4252e] hover:text-white transition-colors duration-300"
           >
             View All Projects
             <svg

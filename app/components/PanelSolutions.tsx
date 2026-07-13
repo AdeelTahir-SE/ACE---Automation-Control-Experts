@@ -1,126 +1,54 @@
-"use client";
+'use client';
 
-import React from "react";
+import Image from 'next/image';
 
-interface PanelItem {
-  name: string;
+const htPanels = ['11kV / 33kV Panels', 'Vacuum Circuit Breaker Panels', 'HT Metering Panels', 'HT Protection Panels'];
+const ltPanels = ['PCC Panels', 'MCC Panels', 'APFC Panels', 'Distribution Boards'];
+
+function PanelCard({ title, items, align }: { title: string; items: string[]; align: 'left' | 'right' }) {
+  return (
+    <article className="relative min-h-[250px] overflow-hidden rounded-lg border border-slate-200 bg-white p-8 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+      <div className={`relative z-10 max-w-[48%] ${align === 'right' ? 'ml-auto' : ''}`}>
+        <h3 className="mb-5 text-lg font-extrabold uppercase tracking-wide text-[#343993]">{title}</h3>
+        <ul className="space-y-3">
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-sm font-medium text-slate-700">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#343993]" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Image
+        src="/hero-panels.png"
+        alt={`${title} by ACE`}
+        width={430}
+        height={260}
+        className={`absolute bottom-0 ${align === 'right' ? 'left-0' : 'right-0'} h-[82%] w-[58%] object-cover object-center`}
+      />
+      <div className={`absolute inset-y-0 ${align === 'right' ? 'left-[40%]' : 'right-[40%]'} w-28 border-[#343993] opacity-80 ${align === 'right' ? 'rounded-l-full border-l-4' : 'rounded-r-full border-r-4'}`} />
+    </article>
+  );
 }
-
-const htPanels: PanelItem[] = [
-  { name: "11kV / 33kV Panels" },
-  { name: "Vacuum Circuit Breaker Panels" },
-  { name: "Metering Panels" },
-  { name: "HT Protection Panels" },
-];
-
-const ltPanels: PanelItem[] = [
-  { name: "PCC Panels" },
-  { name: "MCC Panels" },
-  { name: "APFC Panels" },
-  { name: "Distribution Boards" },
-];
 
 export default function PanelSolutions() {
   return (
-    <section id="products" className="bg-[#f8f9fa] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-[#F57C00] font-semibold tracking-widest text-sm uppercase mb-3">
-            OUR PANEL SOLUTIONS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-4">
-            High Quality{" "}
-            <span className="text-[#F57C00]">Panel Solutions</span>
-          </h2>
-          <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
-            Innovative. Safe. Efficient. Built to perform.
-          </p>
+    <section id="products" className="bg-white px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-lg bg-white p-6 shadow-[0_8px_28px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70 sm:p-8">
+        <div className="mb-8">
+          <div className="mb-2 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-[#343993]">
+            <span className="h-0.5 w-10 bg-[#e4252e]" />
+            Our Panel Solutions
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#17213f] sm:text-4xl">High Quality. Built to Perform.</h2>
         </div>
 
-        {/* Two Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
-          {/* HT Panels */}
-          <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              {/* Icon */}
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#F57C00]/10">
-                <svg
-                  className="w-6 h-6 text-[#F57C00]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </span>
-              <h3 className="text-xl font-bold text-[#0D1B2A]">HT Panels</h3>
-            </div>
-            <ul className="space-y-4">
-              {htPanels.map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3 group">
-                  <span className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-[#F57C00] group-hover:scale-125 transition-transform duration-200" />
-                  <span className="text-[#1a1a2e] text-base font-medium">
-                    {item.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+        <div className="relative grid gap-6 lg:grid-cols-2">
+          <PanelCard title="HT Panels" items={htPanels} align="left" />
+          <PanelCard title="LT Panels" items={ltPanels} align="right" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-[#343993] bg-white shadow-xl lg:flex">
+            <Image src="/ace-logo.png" alt="ACE" width={110} height={48} className="h-auto w-20 object-contain" />
           </div>
-
-          {/* LT Panels */}
-          <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              {/* Icon */}
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#F57C00]/10">
-                <svg
-                  className="w-6 h-6 text-[#F57C00]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path strokeLinecap="round" d="M9 3v18M15 3v18M3 9h18M3 15h18" />
-                </svg>
-              </span>
-              <h3 className="text-xl font-bold text-[#0D1B2A]">LT Panels</h3>
-            </div>
-            <ul className="space-y-4">
-              {ltPanels.map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3 group">
-                  <span className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-[#F57C00] group-hover:scale-125 transition-transform duration-200" />
-                  <span className="text-[#1a1a2e] text-base font-medium">
-                    {item.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
-          <a
-            href="#products"
-            className="inline-flex items-center gap-2 border-2 border-[#F57C00] text-[#F57C00] font-semibold px-8 py-3 rounded-full hover:bg-[#F57C00] hover:text-white transition-colors duration-300"
-          >
-            View All Products
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>

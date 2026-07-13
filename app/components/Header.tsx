@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -18,17 +19,13 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState('#home');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setActiveLink(window.location.hash || '#home');
-    };
+    const handleHashChange = () => setActiveLink(window.location.hash || '#home');
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -40,44 +37,40 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? 'shadow-lg' : 'shadow-none'
+      className={`fixed left-0 top-0 z-50 w-full border-b transition-all duration-300 ${
+        scrolled
+          ? 'border-slate-200 bg-white/95 shadow-[0_10px_30px_rgba(32,36,95,0.08)] backdrop-blur'
+          : 'border-transparent bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group" onClick={() => handleNavClick('#home')}>
-            {/* Lightning Bolt Icon */}
-            <svg
-              className="w-8 h-8 text-[#F57C00] shrink-0"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm md:text-base font-bold text-[#0D1B2A] tracking-tight">
-                ElectroTech
-              </span>
-              <span className="text-[10px] md:text-xs text-[#6b7280] font-medium hidden sm:block">
-                Powering Industries. Building Tomorrow.
-              </span>
-            </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4 md:h-20">
+          <a
+            href="#home"
+            className="flex min-w-0 items-center"
+            onClick={() => handleNavClick('#home')}
+            aria-label="ACE Automation and Control Experts home"
+          >
+            <Image
+              src="/logo.png"
+              alt="ACE Automation and Control Experts"
+              width={250}
+              height={96}
+              className="h-10 w-auto object-contain sm:h-12 md:h-14"
+              priority
+            />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/80 p-1 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`rounded-full px-3.5 py-2 text-sm font-semibold transition-colors duration-200 ${
                   activeLink === link.href
-                    ? 'text-[#F57C00] bg-orange-50'
-                    : 'text-[#333] hover:text-[#F57C00] hover:bg-orange-50/50'
+                    ? 'bg-[#343993] text-white shadow-sm'
+                    : 'text-slate-700 hover:bg-[#eef0ff] hover:text-[#343993]'
                 }`}
               >
                 {link.label}
@@ -85,29 +78,27 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Side: CTA + Hamburger */}
-          <div className="flex items-center gap-3">
-            {/* Get a Quote Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="#contact"
               onClick={() => handleNavClick('#contact')}
-              className="hidden md:inline-flex items-center px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-lg hover:bg-[#E65100] transition-colors duration-200 shadow-md hover:shadow-lg"
+              className="hidden items-center rounded-md bg-[#e4252e] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_20px_rgba(228,37,46,0.18)] transition-all duration-200 hover:bg-[#b91c25] md:inline-flex"
             >
               Get a Quote
             </a>
 
-            {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-[#333] hover:text-[#F57C00] hover:bg-orange-50 transition-colors duration-200"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-[#343993] transition-colors duration-200 hover:bg-[#eef0ff] lg:hidden"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
@@ -116,36 +107,33 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        className={`overflow-hidden border-t border-slate-100 bg-white transition-all duration-300 lg:hidden ${
+          mobileMenuOpen ? 'max-h-[560px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-white border-t border-gray-100 px-4 py-3 space-y-1 shadow-lg">
+        <div className="space-y-1 px-4 py-3 shadow-lg">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => handleNavClick(link.href)}
-              className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
+              className={`block rounded-md px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
                 activeLink === link.href
-                  ? 'text-[#F57C00] bg-orange-50'
-                  : 'text-[#333] hover:text-[#F57C00] hover:bg-orange-50/50'
+                  ? 'bg-[#eef0ff] text-[#343993]'
+                  : 'text-slate-700 hover:bg-slate-50 hover:text-[#343993]'
               }`}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-2 pb-1">
-            <a
-              href="#contact"
-              onClick={() => handleNavClick('#contact')}
-              className="block w-full text-center px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-lg hover:bg-[#E65100] transition-colors duration-200"
-            >
-              Get a Quote
-            </a>
-          </div>
+          <a
+            href="#contact"
+            onClick={() => handleNavClick('#contact')}
+            className="mt-2 block rounded-md bg-[#e4252e] px-5 py-3 text-center text-sm font-bold text-white transition-colors duration-200 hover:bg-[#b91c25]"
+          >
+            Get a Quote
+          </a>
         </div>
       </div>
     </header>

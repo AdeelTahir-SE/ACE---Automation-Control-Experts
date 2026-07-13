@@ -78,12 +78,12 @@ const WhyChooseUs: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Left Side */}
           <div className="lg:w-5/12 lg:sticky lg:top-24 lg:self-start">
-            <span className="inline-block text-sm font-semibold tracking-[0.2em] text-[#F57C00] uppercase mb-4">
+            <span className="inline-block text-sm font-semibold tracking-[0.2em] text-[#e4252e] uppercase mb-4">
               WHY CHOOSE US
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#343993] mb-4 leading-tight">
               Why Choose{" "}
-              <span className="text-[#F57C00] font-extrabold">ElectroTech?</span>
+              <span className="text-[#e4252e] font-extrabold">ElectroTech?</span>
             </h2>
             <p className="text-[#6b7280] text-lg max-w-md">
               We deliver more than just electrical solutions. Our commitment to
@@ -93,9 +93,9 @@ const WhyChooseUs: React.FC = () => {
 
             {/* Decorative element */}
             <div className="hidden lg:flex items-center gap-3 mt-10">
-              <span className="h-1 w-12 bg-[#F57C00] rounded-full" />
-              <span className="h-1 w-6 bg-[#F57C00]/40 rounded-full" />
-              <span className="h-1 w-3 bg-[#F57C00]/20 rounded-full" />
+              <span className="h-1 w-12 bg-[#e4252e] rounded-full" />
+              <span className="h-1 w-6 bg-[#e4252e]/40 rounded-full" />
+              <span className="h-1 w-3 bg-[#e4252e]/20 rounded-full" />
             </div>
           </div>
 
@@ -106,21 +106,21 @@ const WhyChooseUs: React.FC = () => {
                 <div
                   key={index}
                   className="group relative p-6 bg-white border border-gray-200 rounded-xl
-                             hover:border-[#F57C00]/50 hover:shadow-xl hover:-translate-y-1
+                             hover:border-[#e4252e]/50 hover:shadow-xl hover:-translate-y-1
                              transition-all duration-300 cursor-default"
                 >
                   {/* Icon container */}
                   <div
                     className="flex items-center justify-center w-12 h-12 rounded-lg mb-4
-                               bg-[#F57C00]/10 text-[#F57C00]
-                               group-hover:bg-[#F57C00] group-hover:text-white
+                               bg-[#e4252e]/10 text-[#e4252e]
+                               group-hover:bg-[#e4252e] group-hover:text-white
                                transition-all duration-300"
                   >
                     {feature.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[#0D1B2A] font-bold text-base mb-2 leading-snug">
+                  <h3 className="text-[#343993] font-bold text-base mb-2 leading-snug">
                     {feature.title}
                   </h3>
 
@@ -132,7 +132,7 @@ const WhyChooseUs: React.FC = () => {
                   {/* Hover accent bar */}
                   <div
                     className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-0
-                               bg-[#F57C00] rounded-t-full
+                               bg-[#e4252e] rounded-t-full
                                group-hover:w-12 transition-all duration-300"
                   />
                 </div>

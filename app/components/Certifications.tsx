@@ -25,8 +25,8 @@ const certifications: CertificationBadge[] = [
   {
     abbr: "CE",
     name: "Certified Products",
-    borderColor: "border-[#F57C00]",
-    accentColor: "text-[#F57C00]",
+    borderColor: "border-[#e4252e]",
+    accentColor: "text-[#e4252e]",
   },
   {
     abbr: "TÜV",
@@ -48,12 +48,12 @@ export default function Certifications() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-[#F57C00] text-sm font-bold tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-[#e4252e] text-sm font-bold tracking-[0.2em] uppercase mb-4">
             CERTIFICATIONS &amp; QUALITY
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#0D1B2A] leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#343993] leading-tight mb-4">
             Quality You Can{" "}
-            <span className="text-[#F57C00]">Rely On</span>
+            <span className="text-[#e4252e]">Rely On</span>
           </h2>
           <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
             We follow international standards and best practices.
@@ -79,7 +79,7 @@ export default function Certifications() {
               </div>
 
               {/* Certification Name */}
-              <span className="text-sm font-semibold text-[#0D1B2A] leading-snug">
+              <span className="text-sm font-semibold text-[#343993] leading-snug">
                 {cert.name}
               </span>
 

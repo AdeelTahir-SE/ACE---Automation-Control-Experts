@@ -195,16 +195,16 @@ export default function Industries() {
       <div className="max-w-7xl mx-auto">
         {/* Section Label */}
         <div className="mb-12">
-          <span className="inline-block text-[#F57C00] text-sm font-bold tracking-[0.2em] uppercase mb-6">
+          <span className="inline-block text-[#e4252e] text-sm font-bold tracking-[0.2em] uppercase mb-6">
             INDUSTRIES WE SERVE
           </span>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             {/* Left Content */}
             <div className="lg:max-w-lg">
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#0D1B2A] leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#343993] leading-tight">
                 Industries{" "}
-                <span className="text-[#F57C00] italic">We Power</span>
+                <span className="text-[#e4252e] italic">We Power</span>
               </h2>
             </div>
 
@@ -220,12 +220,12 @@ export default function Industries() {
           {industries.map((industry) => (
             <div
               key={industry.name}
-              className="group bg-white rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4 border border-gray-100 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#F57C00]/10 hover:border-[#F57C00]/30 hover:-translate-y-1"
+              className="group bg-white rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4 border border-gray-100 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#e4252e]/10 hover:border-[#e4252e]/30 hover:-translate-y-1"
             >
-              <div className="text-[#0D1B2A] transition-colors duration-300 group-hover:text-[#F57C00]">
+              <div className="text-[#343993] transition-colors duration-300 group-hover:text-[#e4252e]">
                 {industry.icon}
               </div>
-              <span className="text-sm font-semibold text-[#0D1B2A] transition-colors duration-300 group-hover:text-[#F57C00]">
+              <span className="text-sm font-semibold text-[#343993] transition-colors duration-300 group-hover:text-[#e4252e]">
                 {industry.name}
               </span>
             </div>

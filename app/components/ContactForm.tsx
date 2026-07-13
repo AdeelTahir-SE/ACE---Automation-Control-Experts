@@ -46,7 +46,7 @@ export default function ContactForm() {
   };
 
   const inputClasses =
-    'w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#1a1a2e] placeholder-[#9ca3af] text-sm outline-none transition-all duration-300 focus:border-[#F57C00] focus:ring-2 focus:ring-[#F57C00]/20';
+    'w-full px-4 py-3 rounded-lg border border-[#e5e7eb] bg-white text-[#1a1a2e] placeholder-[#9ca3af] text-sm outline-none transition-all duration-300 focus:border-[#e4252e] focus:ring-2 focus:ring-[#e4252e]/20';
 
   return (
     <section id="contact" className="bg-[#f8f9fa] py-20 lg:py-28">
@@ -58,7 +58,7 @@ export default function ContactForm() {
 
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] mt-4 mb-3 leading-tight">
               Let&apos;s Power Your{' '}
-              <span className="text-[#F57C00]">Next Project</span>
+              <span className="text-[#e4252e]">Next Project</span>
             </h2>
 
             <p className="text-[#6b7280] text-base mb-8 max-w-lg">
@@ -179,7 +179,7 @@ export default function ContactForm() {
           <div className="relative hidden lg:block">
             <div className="relative w-full h-[540px] rounded-2xl overflow-hidden shadow-2xl">
               {/* Gradient overlay fallback */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B2A] via-[#1B2D45] to-[#F57C00]/80 z-0" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#343993] via-[#252a77] to-[#e4252e]/80 z-0" />
 
               {/* Image */}
               <Image
@@ -191,12 +191,12 @@ export default function ContactForm() {
               />
 
               {/* Overlay on top of image */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/70 via-transparent to-transparent z-20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#343993]/70 via-transparent to-transparent z-20" />
 
               {/* Floating info card */}
               <div className="absolute bottom-6 left-6 right-6 z-30 bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#F57C00] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#e4252e] flex items-center justify-center shrink-0">
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
