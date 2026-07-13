@@ -9,10 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ElectroTech Solutions | Smart Electrical Solutions for a Better Tomorrow",
+  title: "ACE Automation & Control Experts | Smart Electrical Solutions",
   description:
-    "ElectroTech provides end-to-end electrical system design, planning, execution and manufacturing of HT & LT panels for industries of every scale. Trusted by Pepsi, Coca-Cola, WASA and more.",
+    "ACE Automation & Control Experts provides electrical system design, planning, execution and HT & LT panel manufacturing for industrial projects.",
   keywords: [
+    "ACE Automation",
+    "control experts",
     "electrical solutions",
     "HT panels",
     "LT panels",
@@ -20,12 +22,11 @@ export const metadata: Metadata = {
     "industrial electrical",
     "panel manufacturing",
     "SLD design",
-    "electrical engineering",
   ],
   openGraph: {
-    title: "ElectroTech Solutions | Smart Electrical Solutions",
+    title: "ACE Automation & Control Experts | Smart Electrical Solutions",
     description:
-      "End-to-end electrical system design, planning, execution and manufacturing of HT & LT panels for industries.",
+      "End-to-end industrial electrical system design, planning, execution and HT & LT panel manufacturing.",
     type: "website",
     locale: "en_US",
   },

@@ -6,7 +6,6 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
-import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
         <Services />
         <Projects />
         <Certifications />
-        <ContactForm />
       </main>
       <Footer />
     </>

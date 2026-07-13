@@ -1,148 +1,40 @@
-"use client";
+'use client';
 
-import React from "react";
-
-interface FeatureCard {
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
-}
-
-const features: FeatureCard[] = [
-  {
-    title: "10+ Years of Experience",
-    subtitle: "A decade of delivering reliable electrical solutions across industries.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path strokeLinecap="round" d="M16 2v4M8 2v4M3 10h18" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
-      </svg>
-    ),
-  },
-  {
-    title: "100+ Projects Completed",
-    subtitle: "Successfully delivered projects of every scale and complexity.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 14l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Skilled Engineers",
-    subtitle: "A team of certified professionals committed to excellence.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Quality Materials",
-    subtitle: "We use only certified, industry-grade materials and components.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-  },
-  {
-    title: "On-Time Delivery",
-    subtitle: "Projects completed on schedule, every single time.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <circle cx="12" cy="12" r="10" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-      </svg>
-    ),
-  },
-  {
-    title: "24/7 Support",
-    subtitle: "Round-the-clock assistance whenever you need us most.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636a9 9 0 010 12.728M15.536 8.464a5 5 0 010 7.072" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 12h.01" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 14.5V18a2 2 0 01-2 2H5a2 2 0 01-2-2v-1.5A1.5 1.5 0 014.5 15H6m0 0V9.5A1.5 1.5 0 017.5 8H8M16 14.5V18a2 2 0 002 2h1a2 2 0 002-2v-1.5a1.5 1.5 0 00-1.5-1.5H18m0 0V9.5A1.5 1.5 0 0016.5 8H16" />
-      </svg>
-    ),
-  },
+const features = [
+  { value: '10+', label: 'Years of Experience', icon: 'M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z' },
+  { value: '100+', label: 'Projects Completed', icon: 'M9 12.75 11.25 15 15 9.75M4 6h16M5 6v14h14V6' },
+  { value: 'Skilled', label: 'Engineers', icon: 'M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 20a8 8 0 0 1 16 0' },
+  { value: 'Quality', label: 'Materials', icon: 'M12 3 4.5 6v5.5c0 4.6 3.1 8.8 7.5 9.8 4.4-1 7.5-5.2 7.5-9.8V6L12 3Z' },
+  { value: 'On-Time', label: 'Delivery', icon: 'M12 6v6l3 2m7-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z' },
+  { value: '24/7', label: 'Support', icon: 'M4 13v2a3 3 0 0 0 3 3h1v-8H7a3 3 0 0 0-3 3Zm16 0v2a3 3 0 0 1-3 3h-1v-8h1a3 3 0 0 1 3 3ZM6 10a6 6 0 0 1 12 0' },
 ];
 
-const WhyChooseUs: React.FC = () => {
+export default function WhyChooseUs() {
   return (
-    <section id="about" className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-          {/* Left Side */}
-          <div className="lg:w-5/12 lg:sticky lg:top-24 lg:self-start">
-            <span className="inline-block text-sm font-semibold tracking-[0.2em] text-[#e4252e] uppercase mb-4">
-              WHY CHOOSE US
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#343993] mb-4 leading-tight">
-              Why Choose{" "}
-              <span className="text-[#e4252e] font-extrabold">ElectroTech?</span>
-            </h2>
-            <p className="text-[#6b7280] text-lg max-w-md">
-              We deliver more than just electrical solutions. Our commitment to
-              quality, safety, and innovation sets us apart in every project we
-              undertake.
-            </p>
-
-            {/* Decorative element */}
-            <div className="hidden lg:flex items-center gap-3 mt-10">
-              <span className="h-1 w-12 bg-[#e4252e] rounded-full" />
-              <span className="h-1 w-6 bg-[#e4252e]/40 rounded-full" />
-              <span className="h-1 w-3 bg-[#e4252e]/20 rounded-full" />
-            </div>
+    <section id="about" className="bg-white px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-lg bg-white p-6 shadow-[0_8px_28px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70 sm:p-8">
+        <div className="mb-8">
+          <div className="mb-2 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-[#343993]">
+            <span className="h-0.5 w-10 bg-[#e4252e]" />
+            Why Choose ACE
           </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#17213f] sm:text-4xl">Engineering Excellence You Can Rely On</h2>
+        </div>
 
-          {/* Right Side – Feature Cards Grid */}
-          <div className="lg:w-7/12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="group relative p-6 bg-white border border-gray-200 rounded-xl
-                             hover:border-[#e4252e]/50 hover:shadow-xl hover:-translate-y-1
-                             transition-all duration-300 cursor-default"
-                >
-                  {/* Icon container */}
-                  <div
-                    className="flex items-center justify-center w-12 h-12 rounded-lg mb-4
-                               bg-[#e4252e]/10 text-[#e4252e]
-                               group-hover:bg-[#e4252e] group-hover:text-white
-                               transition-all duration-300"
-                  >
-                    {feature.icon}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-[#343993] font-bold text-base mb-2 leading-snug">
-                    {feature.title}
-                  </h3>
-
-                  {/* Subtitle */}
-                  <p className="text-[#6b7280] text-sm leading-relaxed">
-                    {feature.subtitle}
-                  </p>
-
-                  {/* Hover accent bar */}
-                  <div
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-0
-                               bg-[#e4252e] rounded-t-full
-                               group-hover:w-12 transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {features.map((feature) => (
+            <article key={feature.value} className="flex min-h-44 flex-col items-center justify-center rounded-lg border border-slate-200 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#343993]/35 hover:shadow-lg">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full text-[#343993] ring-2 ring-[#343993]/15">
+                <svg className="h-8 w-8" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} viewBox="0 0 24 24">
+                  <path d={feature.icon} />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-extrabold text-[#343993]">{feature.value}</h3>
+              <p className="mt-1 text-sm font-medium leading-5 text-slate-600">{feature.label}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default WhyChooseUs;
+}

@@ -1,107 +1,43 @@
-"use client";
+'use client';
 
-import React from "react";
-
-interface CertificationBadge {
-  abbr: string;
-  name: string;
-  borderColor: string;
-  accentColor: string;
-}
-
-const certifications: CertificationBadge[] = [
-  {
-    abbr: "ISO 9001",
-    name: "ISO 9001:2015 Certified",
-    borderColor: "border-blue-500",
-    accentColor: "text-blue-600",
-  },
-  {
-    abbr: "IEC",
-    name: "International Standards",
-    borderColor: "border-emerald-500",
-    accentColor: "text-emerald-600",
-  },
-  {
-    abbr: "CE",
-    name: "Certified Products",
-    borderColor: "border-[#e4252e]",
-    accentColor: "text-[#e4252e]",
-  },
-  {
-    abbr: "TÜV",
-    name: "TÜV Certified",
-    borderColor: "border-red-500",
-    accentColor: "text-red-600",
-  },
-  {
-    abbr: "RoHS",
-    name: "RoHS Compliant",
-    borderColor: "border-green-600",
-    accentColor: "text-green-700",
-  },
+const certifications = [
+  { abbr: 'ISO', name: '9001:2015 Certified' },
+  { abbr: 'IEC', name: 'International Standards' },
+  { abbr: 'CE', name: 'Certified Products' },
+  { abbr: 'TUV', name: 'TUV Certified' },
+  { abbr: 'RoHS', name: 'RoHS Compliant' },
 ];
 
 export default function Certifications() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-[#e4252e] text-sm font-bold tracking-[0.2em] uppercase mb-4">
-            CERTIFICATIONS &amp; QUALITY
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#343993] leading-tight mb-4">
-            Quality You Can{" "}
-            <span className="text-[#e4252e]">Rely On</span>
-          </h2>
-          <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
-            We follow international standards and best practices.
-          </p>
+    <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_0.9fr]">
+        <div className="rounded-lg bg-white p-6 shadow-[0_8px_28px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70 sm:p-8">
+          <div className="mb-6">
+            <div className="mb-2 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-[#343993]">
+              <span className="h-0.5 w-10 bg-[#e4252e]" />
+              Certifications &amp; Quality
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#17213f] sm:text-4xl">Committed to Quality &amp; Safety</h2>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+            {certifications.map((cert) => (
+              <div key={cert.abbr} className="flex min-h-32 flex-col items-center justify-center rounded-lg border border-slate-200 bg-white p-4 text-center shadow-sm">
+                <span className="text-3xl font-black text-[#343993]">{cert.abbr}</span>
+                <span className="mt-2 text-xs font-semibold leading-4 text-slate-600">{cert.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Certification Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-          {certifications.map((cert) => (
-            <div
-              key={cert.abbr}
-              className={`relative bg-white rounded-xl border-2 ${cert.borderColor} p-6 flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
-            >
-              {/* Badge Mark */}
-              <div
-                className={`w-16 h-16 rounded-full border-[3px] ${cert.borderColor} flex items-center justify-center`}
-              >
-                <span
-                  className={`text-base font-extrabold ${cert.accentColor} leading-tight`}
-                >
-                  {cert.abbr}
-                </span>
-              </div>
-
-              {/* Certification Name */}
-              <span className="text-sm font-semibold text-[#343993] leading-snug">
-                {cert.name}
-              </span>
-
-              {/* Verified checkmark */}
-              <div className="flex items-center gap-1 mt-1">
-                <svg
-                  className={`w-4 h-4 ${cert.accentColor}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-xs text-[#6b7280] font-medium">
-                  Verified
-                </span>
-              </div>
-            </div>
-          ))}
+        <div id="contact" className="relative overflow-hidden rounded-lg bg-[#20248a] p-8 text-white shadow-[0_12px_30px_rgba(32,36,138,0.18)] sm:p-10">
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(32,36,138,0.98)_0%,rgba(32,36,138,0.88)_55%,rgba(228,37,46,0.20)_100%)]" />
+          <div className="absolute -right-12 bottom-0 h-56 w-56 rounded-full border border-white/10" />
+          <div className="relative max-w-md">
+            <h3 className="text-2xl font-extrabold text-white">LET&apos;S POWER YOUR NEXT PROJECT</h3>
+            <p className="mt-3 text-sm leading-6 text-white/80">Get reliable electrical solutions tailored to your needs.</p>
+            <a href="mailto:info@aceautomation.com.pk" className="mt-7 inline-flex rounded-md bg-[#e4252e] px-7 py-3 text-sm font-extrabold text-white shadow-lg transition-colors hover:bg-[#b91c25]">Get a Free Quote</a>
+          </div>
         </div>
       </div>
     </section>
