@@ -66,7 +66,7 @@ export default function ProjectsPage() {
               <span className="text-white">Projects</span>
             </nav>
 
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Our Projects
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">

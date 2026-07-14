@@ -291,7 +291,7 @@ export default function ServicesPage() {
               <span className="text-white/90">Services</span>
             </nav>
 
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
               Our Services
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
