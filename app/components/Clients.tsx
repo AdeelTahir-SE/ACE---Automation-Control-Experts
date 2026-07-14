@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 const clients = [
   { name: 'Pepsi Cola', logo: '/pepsi-cola.png' },
-  { name: 'Punjab WASA', logo: '/punjab-wasa.jfif' },
+  { name: 'Punjab WASA', logo: '/punjab-wasa.jpg' },
   { name: 'JICA', logo: '/jica.png' },
-  { name: 'Ghani Mills', logo: '/ghani-mills.jfif' },
-  { name: 'Zong 5G', logo: '/zong-5g.jfif' },
-  { name: 'AR Apparels', logo: '/ar-apparels.jfif' },
+  { name: 'Ghani Mills', logo: '/ghani-mills.jpg' },
+  { name: 'Zong 5G', logo: '/zong-5g.jpg' },
+  { name: 'AR Apparels', logo: '/ar-apparels.jpg' },
   { name: 'Kamal Textile Mills', logo: '/kamal-textile-mills.png' },
   { name: 'Haleeb Foods', logo: '/haleeb-foods.jpg' },
   { name: 'Kubota', logo: '/kubota.png' },
