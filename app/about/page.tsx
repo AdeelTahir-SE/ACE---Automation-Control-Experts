@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import WhyChooseUs from '../components/WhyChooseUs';
 import CoreValues from '../components/CoreValues';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -19,16 +20,16 @@ export default function AboutPage() {
           
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <nav className="mb-6 flex items-center gap-2 text-sm font-medium text-white/60">
-              <a href="/" className="transition-colors duration-300 hover:text-white">
+              <Link href="/" className="transition-colors duration-300 hover:text-white">
                 Home
-              </a>
+              </Link>
               <svg className="h-3.5 w-3.5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
               <span className="text-white/90">About Us</span>
             </nav>
 
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               About ACE
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
@@ -111,7 +112,7 @@ export default function AboutPage() {
               Partner with ACE for reliable, efficient, and innovative electrical solutions.
             </p>
             <div className="mt-8">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-flex items-center gap-2 rounded-lg bg-[#e4252e] px-8 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#b91c25] hover:shadow-lg"
               >
@@ -119,7 +120,7 @@ export default function AboutPage() {
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

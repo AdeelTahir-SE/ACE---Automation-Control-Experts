@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 const products = [
   {
@@ -197,9 +198,9 @@ export default function ProductsPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
             <nav className="mb-6 flex items-center gap-2 text-sm text-white/60">
-              <a href="/" className="transition-colors duration-200 hover:text-white">
+              <Link href="/" className="transition-colors duration-200 hover:text-white">
                 Home
-              </a>
+              </Link>
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -319,7 +320,7 @@ export default function ProductsPage() {
 
                     {/* Button */}
                     <div className="mt-6 flex gap-3 pt-2">
-                      <a
+                      <Link
                         href="/#contact"
                         className="inline-flex flex-1 items-center justify-center rounded-lg bg-[#343993] px-4 py-2.5 text-sm font-bold text-white shadow-[0_4px_12px_rgba(52,57,147,0.2)] transition-all duration-300 hover:bg-[#252a77] hover:shadow-[0_6px_20px_rgba(52,57,147,0.3)]"
                       >
@@ -337,7 +338,7 @@ export default function ProductsPage() {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -408,7 +409,7 @@ export default function ProductsPage() {
               tailored to your project&apos;s exact specifications and compliance requirements.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-flex items-center rounded-lg bg-[#e4252e] px-8 py-3.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(228,37,46,0.25)] transition-all duration-300 hover:bg-[#b91c25] hover:shadow-[0_14px_36px_rgba(228,37,46,0.35)]"
               >
@@ -426,13 +427,13 @@ export default function ProductsPage() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/"
                 className="inline-flex items-center rounded-lg border border-white/25 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
               >
                 Back to Home
-              </a>
+              </Link>
             </div>
           </div>
         </section>
