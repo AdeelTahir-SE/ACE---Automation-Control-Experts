@@ -4,57 +4,52 @@ import React from 'react';
 
 const services = [
   {
-    title: 'Electrical System Design',
-    description: 'Innovative & efficient designs tailored to your industrial needs.',
+    title: 'HT Electrical Services',
+    description: 'High Tension line work, panel installation, cable laying & termination.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="3" width="16" height="18" rx="2" />
-        <path d="M8 7h8M8 17h8M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01" />
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
   },
   {
-    title: 'Planning',
-    description: 'Detailed planning for smooth execution, optimization & safety.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 4h2a2 2 0 0 1 2 2v14H4V6a2 2 0 0 1 2-2h2" />
-        <rect x="8" y="2" width="8" height="4" rx="1" />
-        <path d="M8 11h8M8 15h5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Execution',
-    description: 'Professional execution with strict adherence to quality & timelines.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 3v4a2 2 0 0 0 2 2h4" />
-        <path d="M18 13v2a6 6 0 0 1-12 0v-2" />
-        <path d="M8 13h8M10 17h4M7 9h10" />
-      </svg>
-    ),
-  },
-  {
-    title: 'SLD Design',
-    description: 'Single Line Diagrams for accurate system representation.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="5" r="2" />
-        <circle cx="6" cy="18" r="2" />
-        <circle cx="18" cy="18" r="2" />
-        <path d="M12 7v5M12 12H6v4M12 12h6v4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'HT & LT Panels',
-    description: 'Manufacturing of high quality HT & LT panels built for reliability.',
+    title: 'LT Electrical Services',
+    description: 'Power transformers, LT/PFI/MCC panels, and distribution boards.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
         <path d="M9 3v18M15 3v18M3 10h18" />
         <path d="M6 7h.01M12 7h.01M18 7h.01M6 15h.01M12 15h.01M18 15h.01" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Industrial Automation',
+    description: 'Complete automation & integration solutions with PLC, DCS, and SCADA.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Commercial & Residential',
+    description: 'Installation, wiring, lighting, and protection systems for buildings.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Building Automation',
+    description: 'CCTV, Fire Alarm, Networking, BMS and Communication systems.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <circle cx="12" cy="11" r="3" />
       </svg>
     ),
   },
@@ -82,6 +77,18 @@ export default function Services() {
               <p className="mt-4 text-sm leading-6 text-slate-600">{service.description}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#343993] px-7 py-3 text-sm font-bold text-[#343993] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#343993] hover:text-white hover:shadow-lg"
+          >
+            View All Services
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

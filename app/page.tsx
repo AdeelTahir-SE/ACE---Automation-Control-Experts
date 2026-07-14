@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import PanelSolutions from "./components/PanelSolutions";
 import Clients from "./components/Clients";
 import WhyChooseUs from "./components/WhyChooseUs";
+import CoreValues from "./components/CoreValues";
+import ProjectManagement from "./components/ProjectManagement";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
@@ -17,6 +19,8 @@ export default function Home() {
         <PanelSolutions />
         <Clients />
         <WhyChooseUs />
+        <CoreValues />
+        <ProjectManagement />
         <Services />
         <Projects />
         <Certifications />

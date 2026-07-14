@@ -4,19 +4,19 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Products', href: '#products' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Clients', href: '#clients' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Products', href: '/products' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Clients', href: '/#clients' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('#home');
+  const [activeLink, setActiveLink] = useState('/');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -25,9 +25,24 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => setActiveLink(window.location.hash || '#home');
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    const updateActive = () => {
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+      if (path !== '/' && path !== '') {
+        setActiveLink(path);
+      } else if (hash) {
+        setActiveLink('/' + hash);
+      } else {
+        setActiveLink('/');
+      }
+    };
+    updateActive();
+    window.addEventListener('hashchange', updateActive);
+    window.addEventListener('popstate', updateActive);
+    return () => {
+      window.removeEventListener('hashchange', updateActive);
+      window.removeEventListener('popstate', updateActive);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -46,9 +61,9 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
           <a
-            href="#home"
+            href="/"
             className="flex min-w-0 items-center"
-            onClick={() => handleNavClick('#home')}
+            onClick={() => handleNavClick('/')}
             aria-label="ACE Automation and Control Experts home"
           >
             <Image
@@ -80,8 +95,8 @@ export default function Header() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="#contact"
-              onClick={() => handleNavClick('#contact')}
+              href="/#contact"
+              onClick={() => handleNavClick('/#contact')}
               className="hidden items-center rounded-md bg-[#e4252e] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_20px_rgba(228,37,46,0.18)] transition-all duration-200 hover:bg-[#b91c25] md:inline-flex"
             >
               Get a Quote
@@ -128,8 +143,8 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
-            onClick={() => handleNavClick('#contact')}
+            href="/#contact"
+            onClick={() => handleNavClick('/#contact')}
             className="mt-2 block rounded-md bg-[#e4252e] px-5 py-3 text-center text-sm font-bold text-white transition-colors duration-200 hover:bg-[#b91c25]"
           >
             Get a Quote

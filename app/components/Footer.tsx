@@ -1,10 +1,10 @@
-﻿'use client';
+'use client';
 
 import Image from 'next/image';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 const quickLinks = ['Home', 'About Us', 'Services', 'Products', 'Projects', 'Clients', 'Contact'];
-const services = ['Electrical System Design', 'Planning', 'Execution', 'SLD Design', 'HT Panels', 'LT Panels'];
+const services = ['HT Electrical Services', 'LT Electrical Services', 'Industrial Automation', 'Commercial & Residential', 'Building Automation'];
 
 export default function Footer() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -38,9 +38,20 @@ export default function Footer() {
           <div>
             <h3 className="mb-5 text-sm font-extrabold uppercase tracking-wide text-white">Quick Links</h3>
             <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link}><a href={`#${link === 'Home' ? 'home' : link === 'About Us' ? 'about' : link.toLowerCase()}`} className="text-sm text-white/70 hover:text-white">{link}</a></li>
-              ))}
+              {quickLinks.map((link) => {
+                const hrefMap: Record<string, string> = {
+                  'Home': '/',
+                  'About Us': '/#about',
+                  'Services': '/services',
+                  'Products': '/products',
+                  'Projects': '/projects',
+                  'Clients': '/#clients',
+                  'Contact': '/#contact',
+                };
+                return (
+                  <li key={link}><a href={hrefMap[link] || '/'} className="text-sm text-white/70 hover:text-white">{link}</a></li>
+                );
+              })}
             </ul>
           </div>
 
@@ -48,7 +59,7 @@ export default function Footer() {
             <h3 className="mb-5 text-sm font-extrabold uppercase tracking-wide text-white">Our Services</h3>
             <ul className="space-y-2.5">
               {services.map((service) => (
-                <li key={service}><a href="#services" className="text-sm text-white/70 hover:text-white">{service}</a></li>
+                <li key={service}><a href="/services" className="text-sm text-white/70 hover:text-white">{service}</a></li>
               ))}
             </ul>
           </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Image from 'next/image';
 
@@ -41,6 +41,18 @@ export default function Projects() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href="/projects"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#343993] px-7 py-3 text-sm font-bold text-[#343993] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#343993] hover:text-white hover:shadow-lg"
+          >
+            View All Projects
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
