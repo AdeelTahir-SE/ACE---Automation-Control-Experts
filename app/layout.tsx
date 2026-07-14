@@ -9,7 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ACE Automation & Control Experts | Smart Electrical Solutions",
+  metadataBase: new URL('https://ace-automation-control-experts.vercel.app/'),
+  title: {
+    default: "ACE Automation & Control Experts | Smart Electrical Solutions",
+    template: "%s | ACE Automation",
+  },
   description:
     "ACE Automation & Control Experts provides electrical system design, planning, execution and HT & LT panel manufacturing for industrial projects.",
   keywords: [
@@ -22,13 +26,30 @@ export const metadata: Metadata = {
     "industrial electrical",
     "panel manufacturing",
     "SLD design",
+    "Pakistan",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "ACE Automation & Control Experts | Smart Electrical Solutions",
     description:
       "End-to-end industrial electrical system design, planning, execution and HT & LT panel manufacturing.",
+    url: "/",
+    siteName: "ACE Automation & Control Experts",
     type: "website",
     locale: "en_US",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
