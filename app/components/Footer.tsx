@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 const quickLinks = ['Home', 'About Us', 'Services', 'Products', 'Projects', 'Clients', 'Contact'];
-const services = ['HT Electrical Services', 'LT Electrical Services', 'Industrial Automation', 'Commercial & Residential', 'Building Automation'];
+const services = ['HT Electrical Services', 'LT Electrical Services', 'Industrial Automation', 'Commercial & Residential', 'Building Automation', 'Health and Safety', 'Energy Conservation'];
 
 export default function Footer() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -41,7 +41,7 @@ export default function Footer() {
               {quickLinks.map((link) => {
                 const hrefMap: Record<string, string> = {
                   'Home': '/',
-                  'About Us': '/#about',
+                  'About Us': '/about',
                   'Services': '/services',
                   'Products': '/products',
                   'Projects': '/projects',

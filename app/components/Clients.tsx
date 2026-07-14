@@ -1,7 +1,17 @@
-﻿'use client';
+'use client';
 
 
-const clients = ['pepsi', 'wasa', 'Coca-Cola', 'JAICA', 'GANIFIELD MILL'];
+import Image from 'next/image';
+
+const clients = [
+  { name: 'Pepsi Cola', logo: '/pepsi-cola.png' },
+  { name: 'Punjab WASA', logo: '/punjab-wasa.jfif' },
+  { name: 'JICA', logo: '/jica.png' },
+  { name: 'Ghani Mills', logo: '/ghani-mills.jfif' },
+  { name: 'Zong 5G', logo: '/zong-5g.jfif' },
+  { name: 'AR Apparels', logo: '/ar-apparels.jfif' },
+  { name: 'Kamal Textile Mills', logo: '/kamal-textile-mills.png' },
+];
 
 export default function Clients() {
   return (
@@ -12,10 +22,16 @@ export default function Clients() {
           <div className="relative z-10">
             <p className="text-xs font-extrabold uppercase tracking-wide text-white/85">Trusted by industry leaders</p>
             <h2 className="mt-1 text-3xl font-extrabold text-white">Our Valued Clients</h2>
-            <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-5">
+            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
               {clients.map((client) => (
-                <div key={client} className="flex h-20 items-center justify-center rounded-md bg-white px-5 text-center shadow-sm">
-                  <span className={`font-extrabold ${client === 'Coca-Cola' ? 'text-2xl italic text-[#e4252e]' : 'text-xl text-[#343993]'}`}>{client}</span>
+                <div key={client.name} className="group relative flex h-24 items-center justify-center rounded-lg bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-2 hover:ring-[#e4252e]">
+                  <Image 
+                    src={client.logo} 
+                    alt={client.name} 
+                    fill 
+                    className="object-contain p-4 grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 14vw"
+                  />
                 </div>
               ))}
             </div>

@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/#about' },
+  { label: 'About Us', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Products', href: '/products' },
   { label: 'Projects', href: '/projects' },
@@ -60,7 +61,7 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <a
+          <Link
             href="/"
             className="flex min-w-0 items-center"
             onClick={() => handleNavClick('/')}
@@ -74,11 +75,11 @@ export default function Header() {
               className="h-10 w-auto object-contain sm:h-12 md:h-14"
               priority
             />
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/80 p-1 lg:flex">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
@@ -89,18 +90,18 @@ export default function Header() {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <a
+            <Link
               href="/#contact"
               onClick={() => handleNavClick('/#contact')}
               className="hidden items-center rounded-md bg-[#e4252e] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_20px_rgba(228,37,46,0.18)] transition-all duration-200 hover:bg-[#b91c25] md:inline-flex"
             >
               Get a Quote
-            </a>
+            </Link>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -129,7 +130,7 @@ export default function Header() {
       >
         <div className="space-y-1 px-4 py-3 shadow-lg">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => handleNavClick(link.href)}
@@ -140,15 +141,15 @@ export default function Header() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/#contact"
             onClick={() => handleNavClick('/#contact')}
             className="mt-2 block rounded-md bg-[#e4252e] px-5 py-3 text-center text-sm font-bold text-white transition-colors duration-200 hover:bg-[#b91c25]"
           >
             Get a Quote
-          </a>
+          </Link>
         </div>
       </div>
     </header>

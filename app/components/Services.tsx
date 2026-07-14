@@ -53,6 +53,28 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: 'Health and Safety',
+    description: 'HSE compliance, incident-free environment, and workplace safety policies.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M12 8v6" />
+        <path d="M9 11h6" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Energy Conservation',
+    description: 'Energy audits, efficient lighting, and cost-effective management solutions.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 18h6" />
+        <path d="M10 22h4" />
+        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A6 6 0 1 0 7.5 11.5c.76.76 1.23 1.52 1.41 2.5" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Services() {
