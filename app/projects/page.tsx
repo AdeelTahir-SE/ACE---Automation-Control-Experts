@@ -4,18 +4,15 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import Link from "next/link";
 const projects = [
-  { company: 'Ganifield Mill', meta: '(Animal Food Production)', description: 'Complete electrical system design, supply & installation for animal food production facility including MCC panels and power distribution.', image: '/projects-showcase.png', category: 'Manufacturing', year: '2023', location: 'Lahore' },
-  { company: 'Pepsi Beverages', meta: '', description: 'HT & LT panel manufacturing, installation & commissioning for beverage production line expansion.', image: '/hero-panels.png', category: 'Beverages', year: '2023', location: 'Lahore' },
-  { company: 'WASA', meta: '(Water & Sanitation Agency)', description: 'Electrical infrastructure upgrades and panel installation for water treatment facilities.', image: '/contact-bg.png', category: 'Water Treatment', year: '2022', location: 'Lahore' },
-  { company: 'Coca Cola', meta: '', description: 'Supply & installation of LT panels, power cabling & distribution boards for bottling plant.', image: '/projects-showcase.png', category: 'Beverages', year: '2022', location: 'Islamabad' },
-  { company: 'JAICA', meta: '(Japan International Cooperation Agency)', description: 'Complete electrical works & system upgrades for infrastructure development project.', image: '/contact-bg.png', category: 'Infrastructure', year: '2023', location: 'Karachi' },
-  { company: 'Nestlé Pakistan', meta: '', description: 'HT panel manufacturing and installation for dairy processing plant expansion.', image: '/hero-panels.png', category: 'Manufacturing', year: '2024', location: 'Sheikhupura' },
-  { company: 'Packages Limited', meta: '', description: 'Electrical system design & LT panel installation for packaging facility modernization.', image: '/projects-showcase.png', category: 'Manufacturing', year: '2024', location: 'Lahore' },
-  { company: 'DHA Lahore', meta: '(Defence Housing Authority)', description: 'Underground power distribution system design and HT/LT infrastructure.', image: '/contact-bg.png', category: 'Infrastructure', year: '2023', location: 'Lahore' },
-  { company: 'Engro Foods', meta: '', description: 'Complete electrical infrastructure for food processing unit including APFC panels.', image: '/hero-panels.png', category: 'Manufacturing', year: '2022', location: 'Sahiwal' },
-  { company: 'Punjab Saaf Pani', meta: '(Clean Water Initiative)', description: 'Solar-powered pump stations with VFD panels and automation systems.', image: '/projects-showcase.png', category: 'Water Treatment', year: '2024', location: 'Multiple Cities' },
+  { company: 'Ghani Halal Feed Mill Ltd', meta: 'Erection and Commissioning', description: 'Erection of all Machinery related to Animal Feed, and Installation of HT, LT, PFI panels, power Transformer, Distribution Boards and MCC panels. Electrification internal and external, computer networking, Earthing etc.', image: '/projects/ghani-mills.png', category: 'Manufacturing' },
+  { company: 'Pepsi Cola', meta: 'Automation CIP System', description: 'Complete Automation of CIP System, RO Plant, Beverage Syrup Tank Filling Plant.', image: '/projects/pepsi-cola.png', category: 'Beverages' },
+  { company: 'WASA Faisalabad', meta: '(Torishima Pump MGF)', description: 'Replacement of Pumping Machinery at INLINE BOOSTER. Installation & Commissioning of 11kV HT Switchgear (630A), 4500 kVA Power Transformer, 690V LV Panels, Siemens VFD Motor Control Panels (590 kW & 300 kW). Installation of Instrumentation, Flow Meters, Pumps, Earth Pits, Cable Trays, and Complete Cable Laying.', image: '/projects/wasa.png', category: 'Water Treatment' },
+  { company: 'JICA / WASA', meta: 'Water Management SCADA', description: 'Real-time monitoring and control of water supply, distribution, and treatment systems. Integration of PLCs, SCADA, level sensors, flow meters, pumps, and field instruments. Alarm management, historical data logging, and centralized control from the SCADA Control Room.', image: '/projects/jica.png', category: 'Infrastructure' },
+  { company: 'Zong', meta: 'Data Center', description: 'Installation of cable tray and data center.', image: '/projects/zong-5g.png', category: 'Infrastructure' },
+  { company: 'AR APPARELS', meta: 'Solar System', description: 'Installation of solars system 255kW.', image: '/projects/ar-apparels.png', category: 'Manufacturing' },
+  { company: 'Kamal Ltd Weaving Zone', meta: 'Erection and Commissioning', description: 'Erection and Commissioning of HT, LT, PFI panels and power Transformer. Cable Tray and Cable Ladder fixing, Installation of Distribution Boards and MCC panels. Electrification internal and external, Cabling for computer networking, Earthing.', image: '/projects/kamal-textile-mills.png', category: 'Manufacturing' },
 ];
 
 const categories = ['All', 'Manufacturing', 'Beverages', 'Infrastructure', 'Water Treatment'];
@@ -59,7 +56,7 @@ export default function ProjectsPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
             <nav className="mb-6 flex items-center gap-2 text-sm font-medium text-white/70">
-              <a href="/" className="transition-colors hover:text-white">Home</a>
+              <Link href="/" className="transition-colors hover:text-white">Home</Link>
               <svg className="h-3.5 w-3.5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
@@ -143,26 +140,9 @@ export default function ProjectsPage() {
                     )}
                   </h3>
 
-                  <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-slate-500">
+                  <p className="mt-2.5 line-clamp-6 text-sm leading-relaxed text-slate-500">
                     {project.description}
                   </p>
-
-                  {/* Location + Year */}
-                  <div className="mt-4 flex items-center gap-4 border-t border-slate-100 pt-4 text-xs font-semibold text-slate-400">
-                    <span className="flex items-center gap-1.5">
-                      <svg className="h-3.5 w-3.5 text-[#e4252e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      {project.location}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="h-3.5 w-3.5 text-[#343993]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      {project.year}
-                    </span>
-                  </div>
                 </div>
               </article>
             ))}
@@ -211,7 +191,7 @@ export default function ProjectsPage() {
               Whether it&apos;s an industrial panel system, power distribution, or a complete turnkey electrical
               installation — our team of experts is ready to bring your vision to life.
             </p>
-            <a
+            <Link
               href="/#contact"
               className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#e4252e] px-8 py-4 text-sm font-extrabold text-white shadow-[0_10px_30px_rgba(228,37,46,0.3)] transition-all duration-300 hover:bg-[#b91c25] hover:shadow-[0_15px_40px_rgba(228,37,46,0.4)]"
             >
@@ -219,7 +199,7 @@ export default function ProjectsPage() {
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </section>
       </main>

@@ -3,11 +3,11 @@
 import Image from 'next/image';
 
 const projects = [
-  { company: 'Ganifield Mill', meta: '(Animal Food Production)', description: 'Electrical System Design, Supply & Installation', image: '/projects-showcase.png' },
-  { company: 'Pepsi Beverages', meta: '', description: 'HT & LT Panels, Installation & Commissioning', image: '/hero-panels.png' },
-  { company: 'WASA', meta: '', description: 'Electrical Infrastructure & Panel Installation', image: '/contact-bg.png' },
-  { company: 'Coca Cola', meta: '', description: 'Supply & Installation of LT Panels & Cabling', image: '/projects-showcase.png' },
-  { company: 'JAICA', meta: '', description: 'Electrical Works & System Upgrades', image: '/contact-bg.png' },
+  { company: 'Ghani Halal Feed Mill Ltd', meta: 'Erection and Commissioning', description: 'Erection of all Machinery related to Animal Feed, and Installation of HT, LT, PFI panels.', image: '/projects/ghani-mills.png' },
+  { company: 'Pepsi Cola', meta: 'Automation CIP System', description: 'Complete Automation of CIP System, RO Plant, Beverage Syrup Tank Filling Plant.', image: '/projects/pepsi-cola.png' },
+  { company: 'WASA Faisalabad', meta: '(Torishima Pump MGF)', description: 'Replacement of Pumping Machinery at INLINE BOOSTER. Installation & Commissioning of 11kV HT Switchgear.', image: '/projects/wasa.png' },
+  { company: 'JICA / WASA', meta: 'Water Management SCADA', description: 'Real-time monitoring and control of water supply, distribution, and treatment systems.', image: '/projects/jica.png' },
+  { company: 'Kamal Ltd Weaving Zone', meta: 'Erection and Commissioning', description: 'Erection and Commissioning of HT, LT, PFI panels and power Transformer.', image: '/projects/kamal-textile-mills.png' },
 ];
 
 export default function Projects() {
@@ -37,7 +37,7 @@ export default function Projects() {
               <div className="p-5">
                 <h3 className="font-extrabold text-[#343993]">{project.company}</h3>
                 {project.meta && <p className="text-xs font-semibold text-slate-500">{project.meta}</p>}
-                <p className="mt-3 text-sm leading-6 text-slate-700">{project.description}</p>
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-700">{project.description}</p>
               </div>
             </article>
           ))}
